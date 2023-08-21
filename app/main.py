@@ -6,7 +6,7 @@ import numpy as np
 
 
 def get_clean_data():
-  data = pd.read_csv("C:\\Users\\Akash\\Desktop\\DSA\\STACK\\streamlit-cancer-predict\\data\\data.csv")
+  data = pd.read_csv("C:\\Users\\Akash\\Desktop\\streamlit-cancer-predict\\Streamlit-web-app\\data\data.csv")
   
   data = data.drop(['Unnamed: 32', 'id'], axis=1)
   
@@ -139,8 +139,8 @@ def get_radar_chart(input_data):
 
 
 def add_predictions(input_data):
-  model = pickle.load(open("C:\\Users\\Akash\\Desktop\\DSA\\STACK\\streamlit-cancer-predict\\model\\model.pkl", "rb"))
-  scaler = pickle.load(open("C:\\Users\\Akash\\Desktop\\DSA\\STACK\\streamlit-cancer-predict\\model\\scaler.pkl", "rb"))
+  model = pickle.load(open("C:\\Users\\Akash\\Desktop\\streamlit-cancer-predict\\Streamlit-web-app\\model\\model.pkl", "rb"))
+  scaler = pickle.load(open("C:\\Users\\Akash\\Desktop\\streamlit-cancer-predict\\Streamlit-web-app\\model\\scaler.pkl", "rb"))
   
   input_array = np.array(list(input_data.values())).reshape(1, -1)
   
@@ -172,7 +172,7 @@ def main():
     initial_sidebar_state="expanded"
   )
   
-  with open("C:\\Users\\Akash\\Desktop\\DSA\\STACK\\streamlit-cancer-predict\\assets\\style.css") as f:
+  with open("C:\\Users\\Akash\\Desktop\\streamlit-cancer-predict\\Streamlit-web-app\\assets\\style.css") as f:
     st.markdown("<style>{}</style>".format(f.read()), unsafe_allow_html=True)
   
   input_data = add_sidebar()
